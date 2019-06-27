@@ -23,13 +23,14 @@ parser.add_argument('-wo', help='Show the week PR was opened', action='store_tru
 parser.add_argument('-wc', help='Show the week PR was closed', action='store_true')
 parser.add_argument('-uo', help='Show the user who opened the PR', action='store_true')
 parser.add_argument('-uc', help='Show the user who closed', action='store_true')
+parser.add_argument("-t", "--token", help="token for access", type=str,
+                    default="bf4e817191722f4187d6fe23dc6d54cc880e5f3e")
 args = parser.parse_args()
 
 user = args.user
 pull = args.pull
 repo = args.repo
-
-token = 'bf4e817191722f4187d6fe23dc6d54cc880e5f3e'
+token = args.token
 
 pull_url = 'https://api.github.com/repos/' + user + '/' + repo + '/pulls/' + str(pull)
 

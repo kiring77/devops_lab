@@ -4,7 +4,7 @@ import subprocess
 import json
 import yaml
 
-v = os.environ['VIRTUAL_ENV'].split('/')
+v = sys.prefix
 site_packages = next(s for s in sys.path if 'site-packages' in s)
 packages = subprocess.run(['pip', 'freeze'], stdout=subprocess.PIPE).stdout.decode('utf-8').split()
 o = []
@@ -14,7 +14,7 @@ n = {x: o[o.index(x) + 1] for x in o if o.index(x) % 2 == 0}
 
 output = {
     'version': sys.version.split('\n')[0],
-    'Virtual environment': v[-1],
+    'Virtual environment': v,
     'Executable is located in': sys.executable,
     'PIP is located in': subprocess.check_output(['which', 'pip'],
                                                  universal_newlines=True).split('\n')[0],

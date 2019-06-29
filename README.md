@@ -28,14 +28,6 @@ Initial config parameters are located in 'config.json' file: -type of output fil
                                                              -interval (in seconds) 
 You can configure type of output file (json or txt) and interval (in seconds) 
 
-## Running
-
-`../site-packages]$ python SystemInfo`
-
-or
-
-`$ python  ../site-packages/SystemInfo`
-
 ## Output examples
 
 Examples of the output:
